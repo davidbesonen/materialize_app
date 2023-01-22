@@ -1,0 +1,60 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 7500
+  host: localhost
+  username: postgres
+  password: postgres
+
+development:
+  <<: *default
+  database: boc_sqone_development
+  password: postgres
+  host: 127.0.0.1
+  port: 5432
+
+test:
+  <<: *default
+  database: boc_sqone_test
+
+staging:
+  <<: *default
+  database: boc_sqone_staging
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: 127.0.0.1
+  database: building_bocs
+  username: deploy
+  password: Unclebertie1
+
+oata:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: 127.0.0.1
+  database: building_bocs
+  username: deploy
+  password: Unclebertie1
+
+cec:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: 127.0.0.1
+  database: building_bocs
+  username: deploy
+  password: Unclebertie1
+
+
+sandbox:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: 127.0.0.1
+  database: building_bocs_sandbox
+  username: deploy
+  password: Bones778!

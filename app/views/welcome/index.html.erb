@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="row">
+      <form class="col s12">
+        <h1>Credential Management System (CMS)</h1>
+        <p>Insert Name into ConditionGroups Table:</p>
+      </form>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s3">
+            <input placeholder="First and Last Name" id="name" type="text" class="validate">
+            <label for="name">Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <%# <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>INSERT</a> %>
+            <%= link_to '<a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>INSERT</a>'.html_safe, insert_welcome_path() %>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

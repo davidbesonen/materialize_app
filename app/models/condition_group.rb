@@ -1,0 +1,2 @@
+class ConditionGroup < ApplicationRecord
+end
