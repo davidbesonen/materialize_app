@@ -176,13 +176,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_18_211909) do
     t.string "name"
     t.string "reply_to_email"
     t.string "email_subject"
+    t.boolean "sends_notification", default: false
+    t.boolean "sends_email", default: false
     t.text "email_content"
     t.text "notification_content"
+    t.datetime "sent_at", precision: nil
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
-    t.boolean "sends_notification"
-    t.boolean "sends_email"
-    t.datetime "sent_at", precision: nil
     t.datetime "finalized_at", precision: nil
   end
 
@@ -589,11 +589,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_18_211909) do
     t.integer "items_count", default: 0
     t.integer "refs_count", default: 0
     t.integer "media_assets_count", default: 0
+    t.datetime "approved_at", precision: nil
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.datetime "archived_at", precision: nil
     t.jsonb "log_data"
-    t.datetime "approved_at", precision: nil
     t.integer "created_by"
     t.datetime "rejected_at", precision: nil
   end

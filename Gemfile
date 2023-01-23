@@ -9,6 +9,12 @@ gem "sassc-rails"
 
 gem 'turbolinks'
 
+gem 'simple_form'
+
+gem 'html2haml'
+
+gem "haml-rails", "~> 2.0"
+
 gem 'coffee-rails'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.1"

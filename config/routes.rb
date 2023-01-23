@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root 'condition_groups#index'
+  get '/new', to: 'condition_groups#new'
 
   resources :condition_groups
 end

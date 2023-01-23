@@ -1,0 +1,18 @@
+.row 
+  .col-sm-12 
+    .card 
+      .card-header 
+        %h1= "Condition Groups"
+.row 
+  .col-sm-12 
+    .card 
+      .card-body
+        %table
+          %thead
+            %tr
+              %th Name
+          %tbody
+            -@condition_groups.each do |cd|
+              %tr
+                %td 
+                  = cd.name

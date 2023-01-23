@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
+  %body
+    .row
+      %form.col.s12
+        %h1 Credential Management System (CMS)
+        %p Insert Name into ConditionGroups Table:
+      .row
+        %form.col.s12
+          .row
+            .input-field.col.s3
+              %input#name.validate{:placeholder => "First and Last Name", :type => "text"}/
+              %label{:for => "name"} Name
+          .row
+            %div
+              = link_to '<a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>INSERT</a>'.html_safe, insert_welcome_path()

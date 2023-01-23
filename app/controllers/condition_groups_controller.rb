@@ -1,6 +1,12 @@
 class ConditionGroupsController < ApplicationController
+  def index 
+    @condition_groups = ConditionGroup.all
+    # @condiiton_group = ConditionGroup.new
+  end
+
   def new
     # has a view
+    @condiiton_group = ConditionGroup.new
   end
 
   def show
@@ -18,9 +24,5 @@ class ConditionGroupsController < ApplicationController
   end
 
   def update
-  end
-
-  def index 
-    # has a view
   end
 end

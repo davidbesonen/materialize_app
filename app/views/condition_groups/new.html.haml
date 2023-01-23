@@ -1,0 +1,8 @@
+.row 
+  .col-sm-12 
+    .card 
+      .card-header 
+        %h1= "Add Name"
+      .card-body 
+        = simple_form_for @condition_group do |f|
+          = f.input :name
