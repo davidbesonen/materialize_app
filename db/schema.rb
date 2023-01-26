@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_25_205143) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_26_214409) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
   enable_extension "plpgsql"
@@ -176,13 +176,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_25_205143) do
     t.string "name"
     t.string "reply_to_email"
     t.string "email_subject"
-    t.boolean "sends_notification", default: false
-    t.boolean "sends_email", default: false
     t.text "email_content"
     t.text "notification_content"
-    t.datetime "sent_at", precision: nil
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
+    t.boolean "sends_notification"
+    t.boolean "sends_email"
+    t.datetime "sent_at", precision: nil
     t.datetime "finalized_at", precision: nil
   end
 
@@ -260,12 +260,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_25_205143) do
 
   create_table "conditions", force: :cascade do |t|
     t.string "name"
-    t.bigint "condition_group_id_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "condition_group_id"
-    t.index ["condition_group_id"], name: "index_conditions_on_condition_group_id"
-    t.index ["condition_group_id_id"], name: "index_conditions_on_condition_group_id_id"
   end
 
   create_table "cumulative_windows", force: :cascade do |t|
@@ -599,11 +595,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_25_205143) do
     t.integer "items_count", default: 0
     t.integer "refs_count", default: 0
     t.integer "media_assets_count", default: 0
-    t.datetime "approved_at", precision: nil
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.datetime "archived_at", precision: nil
     t.jsonb "log_data"
+    t.datetime "approved_at", precision: nil
     t.integer "created_by"
     t.datetime "rejected_at", precision: nil
   end
@@ -1314,7 +1310,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_25_205143) do
   add_foreign_key "bank_role_assignments", "roles"
   add_foreign_key "class_entities", "class_levels"
   add_foreign_key "class_levels", "class_systems"
-  add_foreign_key "conditions", "condition_groups"
   add_foreign_key "demographic_assignments", "demographics"
   add_foreign_key "demographic_assignments", "users"
   add_foreign_key "demographics", "demographic_groups"
