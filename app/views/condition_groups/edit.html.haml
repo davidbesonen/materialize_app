@@ -1,0 +1,26 @@
+.row 
+  .col-sm-12 
+    .card 
+      .card-header 
+        %h1= "Condition Groups"
+.row 
+  .col-sm-12 
+    .card 
+      .card-body
+        .row 
+          .col-sm-12 
+            %h5 Current Name
+            .row 
+              .col-sm-12
+                %h6
+                  = @condition_group.name
+        .row 
+          .col-sm-12 
+            %h5 New Name 
+            .row
+              .col-sm-12 
+                = simple_form_for @condition_group do |f|
+                  = f.input :name, label: false, placeholder: "New Name"
+                  = f.submit "Update Name", class: "waves-effect waves-light btn"
+                  = link_to "Back", condition_groups_path, class: "waves-effect waves-light btn"
+

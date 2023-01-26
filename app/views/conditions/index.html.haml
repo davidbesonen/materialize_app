@@ -1,0 +1,25 @@
+.row 
+  .col-sm-12 
+    .card 
+      .card-header 
+        %h1= "Conditions"
+        %a
+          = link_to "Add Condition", new_condition_path(), class: "waves-effect waves-light btn"
+.row 
+  .col-sm-12 
+    .card 
+      .card-body
+        %table
+          %thead
+            %tr
+              %th Name
+              %th Actions
+          %tbody
+            -@conditions.each do |c|
+              %tr
+                %td 
+                  = c.name
+                %td.text-center
+                  .btn-group 
+                -#   = link_to "Delete", condition_group_path(cd), method: :delete, class: "waves-effect waves-light btn"
+                -#   = link_to "Edit", edit_condition_group_path(cd), class: "waves-effect waves-light btn"
