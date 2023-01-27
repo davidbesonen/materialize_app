@@ -12,8 +12,11 @@
         %a.brand-logo{:href => "#"} Logo
         %ul#nav-mobile.right.hide-on-med-and-down
           %li
-            %a{:href => "condition_groups#index"} Condition Groups
+            = link_to "Condition Groups", condition_groups_path
           %li
-            %a{:href => "conditions#index"} Conditions
+            = link_to "Conditions", conditions_path
     .container
+      - flash.each do |message_type, message|
+        %p.lead
+          %strong.callout= message
       = yield

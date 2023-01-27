@@ -16,7 +16,7 @@ class ConditionsController < ApplicationController
     else 
       # Validation fails, errors are attached to the object on the errors attribute
       # You can see this with a binding.pry, and then calling @condition.errors
-      flash[:error] = "There was an error creating the condition"
+      flash[:alert] = "There was an error creating the condition"
       render :new
     end
   end
@@ -27,7 +27,7 @@ class ConditionsController < ApplicationController
   def destroy
     @condition = Condition.find(params[:id])
     @condition.destroy
-    flash[:success] = "The to-do item was successfully destroyed."
+    flash[:notice] = "The to-do item was successfully destroyed."
     redirect_to conditions_path
   end
 

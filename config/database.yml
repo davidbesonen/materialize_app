@@ -9,7 +9,7 @@ default: &default
 
 development:
   <<: *default
-  database: boc_sqone_development
+  database: materialize_app_development
   password: postgres
   host: 127.0.0.1
   port: 5432
@@ -27,7 +27,7 @@ production:
   encoding: unicode
   pool: 5
   host: 127.0.0.1
-  database: building_bocs
+  database: materialize_app_
   username: deploy
   password: Unclebertie1
 
