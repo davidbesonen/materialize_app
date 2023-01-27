@@ -1,10 +1,13 @@
 .row 
-  .col-sm-12 
-    .card 
-      .card-header 
-        %h1= "Add Condition"
-      .card-body 
-        = simple_form_for @condition do |f|
-          = f.input :name
-          = f.submit "Add Condition", class: "waves-effect waves-light btn"
-          = link_to "Back", condition_groups_path, class: "waves-effect waves-light btn"
+  .col.s12
+    %h1= "Add Condition"
+    = form_with model: @condition do |f|
+      = f.text_field :name
+      = f.select :condition_group_id, ConditionGroup.pluck(:name, :id), label: "Group"
+      %br
+      %br
+      %br
+      %br
+      %br
+      = f.submit "Add Condition", class: "waves-effect waves-light btn"
+      = link_to "Back", conditions_path, class: "waves-effect waves-light btn"

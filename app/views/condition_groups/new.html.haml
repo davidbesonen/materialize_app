@@ -2,9 +2,9 @@
   .col-sm-12 
     .card 
       .card-header 
-        %h1= "Add Name"
+        %h1= "Add Group"
       .card-body 
         = simple_form_for @condition_group do |f|
           = f.input :name
-          = f.submit "Add Name", class: "waves-effect waves-light btn"
+          = f.submit "Add Group", class: "waves-effect waves-light btn"
           = link_to "Back", condition_groups_path, class: "waves-effect waves-light btn"

@@ -13,13 +13,16 @@
           %thead
             %tr
               %th Name
+              %th Condition Group
               %th Actions
           %tbody
             -@conditions.each do |c|
               %tr
                 %td 
                   = c.name
+                %td
+                  = c.condition_group.name
                 %td.text-center
                   .btn-group 
-                -#   = link_to "Delete", condition_group_path(cd), method: :delete, class: "waves-effect waves-light btn"
-                -#   = link_to "Edit", edit_condition_group_path(cd), class: "waves-effect waves-light btn"
+                    = link_to "Delete", condition_path(c), method: :delete, class: "waves-effect waves-light btn"
+                    = link_to "Edit", edit_condition_path(c), class: "waves-effect waves-light btn"

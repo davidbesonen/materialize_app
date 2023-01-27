@@ -5,6 +5,7 @@ class ConditionsController < ApplicationController
 
   def new
     @condition = Condition.new
+    @condition_groups = ConditionGroup.all
   end
 
   def create
@@ -24,9 +25,15 @@ class ConditionsController < ApplicationController
   end
 
   def destroy
+    @condition = Condition.find(params[:id])
+    @condition.destroy
+    flash[:success] = "The to-do item was successfully destroyed."
+    redirect_to conditions_path
   end
 
   def edit
+    @condition = Condition.find(params[:id])
+    @condition_groups = ConditionGroup.all
   end
 
   def update

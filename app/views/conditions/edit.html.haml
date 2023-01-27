@@ -1,0 +1,29 @@
+.row 
+  .col-sm-12 
+    .card 
+      .card-header 
+        %h1= "Conditions"
+.row 
+  .col-sm-12 
+    .card 
+      .card-body
+        .row 
+          .col-sm-12 
+            %h5 Current Condition
+            .row 
+              .col-sm-12
+                %h6
+                  = @condition.name
+                %h6
+                  = @condition.condition_group.name
+        .row 
+          .col-sm-12 
+            %h5 New Data 
+            .row
+              .col-sm-12 
+                = simple_form_for @condition do |f|
+                  = f.input :name, label: false, placeholder: "New Name"
+                  = f.input :condition_group_id, collection: @condition_groups, label: false, placeholder: "New Group"
+                  = f.submit "Update Name", class: "waves-effect waves-light btn"
+                  = link_to "Back", conditions_path, class: "waves-effect waves-light btn"
+

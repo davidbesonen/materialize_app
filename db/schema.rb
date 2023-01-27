@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_26_214409) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_27_163154) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
   enable_extension "plpgsql"
@@ -262,6 +262,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_26_214409) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "condition_group_id"
+    t.index ["condition_group_id"], name: "index_conditions_on_condition_group_id"
   end
 
   create_table "cumulative_windows", force: :cascade do |t|
